@@ -1,0 +1,8 @@
+.DS_Store
+.vscode
+__pycache__
+_*
+.mypy_cache
+.pytest_cache
+*build*
+*dist*

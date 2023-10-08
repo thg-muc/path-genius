@@ -1,0 +1,4 @@
+py2app==0.28.6
+pyperclip==1.8.2
+pytest==7.4.2
+setuptools==68.2.2
