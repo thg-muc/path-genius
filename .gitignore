@@ -4,5 +4,6 @@ __pycache__
 _*
 .mypy_cache
 .pytest_cache
+.eggs
 *build*
 *dist*

@@ -12,6 +12,8 @@ from setuptools import setup
 # %% ----------------------------------
 # * Define py2app options
 
+VERSION = '1.0.1'
+
 APP = ['path_genius_app.py']
 OPTIONS = {
     'argv_emulation': False,
@@ -21,11 +23,12 @@ OPTIONS = {
         'CFBundleDisplayName': 'Path-Genius',
         'CFBundleGetInfoString': 'Converts Windows and Mac file paths',
         'CFBundleIdentifier': 'com.thg.path-genius',
-        'CFBundleVersion': '1.0.0',
-        'CFBundleShortVersionString': '1.0.0',
+        'CFBundleVersion': VERSION,
+        'CFBundleShortVersionString': VERSION,
         'CFBundleExecutable': 'Path-Genius',
+        'NSHumanReadableCopyright': '(c) 2023 Thomas Glanzer (MIT License)',
     },
-    'packages': ['pyperclip'],
+    'packages': ['pyperclip', 'Foundation'],
     'frameworks': ['assets/libffi.8.dylib'],
 }
 

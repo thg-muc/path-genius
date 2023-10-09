@@ -132,13 +132,16 @@ def display_notification(title: str, message: str) -> None:
         # pylint: disable=import-outside-toplevel
         from Foundation import NSUserNotification, NSUserNotificationCenter
 
-        # Try to display a notification
+        # Display a notification
         notification = NSUserNotification.alloc().init()
         notification.setTitle_(title)
         notification.setInformativeText_(message)
-        NSUserNotificationCenter.defaultUserNotificationCenter(
-        ).scheduleNotification_(notification)
-    except AttributeError:
+        # ... disable the action button
+        notification. setHasActionButton_(False)
+        # ... and schedule the notification
+        (NSUserNotificationCenter.defaultUserNotificationCenter(
+        ).scheduleNotification_(notification))
+    except (AttributeError, ImportError):
         # If the notification classes are not available, fail silently
         pass
 
